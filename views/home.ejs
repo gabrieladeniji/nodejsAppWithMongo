@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <script src="/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="/assets/js/ajax.js"></script>
+  </head>
+  <body>
+    <% include ../partials/nav.ejs %>
+    <h1>List Of Corrupt Politician</h1>
+    <div class="container">
+      <form class="form-container">
+        <input type="text" placeholder="Add items" name="items" required/>
+        <button type="button" class="submit">Add Politician</button>
+      </form>
+      <div class="show-items">
+        <ul class="ul-list">
+          <% datas.forEach(function(data){ %>
+            <li><%= data.politician %></li>
+          <% }) %>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
