@@ -17,17 +17,4 @@ module.exports = function(app, urlencodedParser){
     });
   });
 
-  app.post('/', urlencodedParser, (req, res)=>{
-    Politics({politician: req.body.data}).save((err)=>{
-      res.send('success');
-    });
-  });
-
-  app.delete('/:value', urlencodedParser, (req, res)=>{
-    Politics.find({politician: req.params.value}).remove((err, data)=>{
-      if(err) throw err;
-      res.send('success');
-    });
-  });
-
 };
